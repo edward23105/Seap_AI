@@ -1,0 +1,62 @@
+{
+  "item": {
+    "caNoticeId": 200100001,
+    "noticeId": 200200001,
+    "procedureId": 200300001,
+    "noticeNo": "CN2025-0001",
+    "contractingAuthorityNameAndFN": "Ministerul Educației",
+    "contractTitle": "Furnizare echipamente IT – laptopuri și servere",
+    "cpvCodeAndName": "30200000-1 – Echipamente IT (Rev.2)",
+    "ronContractValue": 2700000,
+    "highestOfferValue": 2800000,
+    "lowestOfferValue": 2650000,
+    "currencyCode": "RON"
+  },
+  "notice": {
+    "caNoticeEdit_New": {
+      "section2_New": {
+        "section2_2_New": {
+          "descriptionList": [
+            {
+              "noticeLotID": 200500001,
+              "contractTitle": "Lot 1 – Laptopuri educaționale",
+              "estimatedValue": 1600000,
+              "minEstimatedValue": 1500000,
+              "maxEstimatedValue": 1700000
+            },
+            {
+              "noticeLotID": 200500002,
+              "contractTitle": "Lot 2 – Servere rack",
+              "estimatedValue": 1100000,
+              "minEstimatedValue": 1000000,
+              "maxEstimatedValue": 1200000
+            }
+          ]
+        }
+      }
+    }
+  },
+  "noticeContracts": {
+    "items": [
+      {
+        "caNoticeContractId": 200600001,
+        "contractValue": 1550000,
+        "defaultCurrencyContractValue": 1550000,
+        "contractValueMinOffer": 1500000,
+        "contractValueMaxOffer": 1600000,
+        "defaultCurrencyContractValueMinOffer": 1500000,
+        "defaultCurrencyContractValueMaxOffer": 1600000
+      },
+      {
+        "caNoticeContractId": 200600002,
+        "contractValue": 1150000,
+        "defaultCurrencyContractValue": 1150000,
+        "contractValueMinOffer": 1100000,
+        "contractValueMaxOffer": 1200000,
+        "defaultCurrencyContractValueMinOffer": 1100000,
+        "defaultCurrencyContractValueMaxOffer": 1200000
+      }
+    ]
+  }
+}
+
