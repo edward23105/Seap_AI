@@ -50,7 +50,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
 # For production, load from env:
 #   SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
-SECRET_KEY = "dbee871f208f4a4fa21aa19dcdb761abad87521c35ad24567571d8769323035c"
+SECRET_KEY = ""
 ALGORITHM = "HS256"
 DEFAULT_EXPIRE_HOURS = 1
 
