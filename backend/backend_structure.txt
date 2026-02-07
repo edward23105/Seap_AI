@@ -1,0 +1,9 @@
+		--- Backend ----
+		
+	API : FastApi(route.py)
+		/auth_user(email,password) -> JWT
+		/get_reports(filters,auth) -> deals
+		/verify_jwt(auth) -> ok/not ok
+		/refresh_jwt(auth) -> JWT
+		/summarize(data,summarize) -> data_summarized
+	

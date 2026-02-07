@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from database import User
 from datamodels import AuthRequest, DataRequest, ToSum
 from search import get_data
-from usefull import summarize ,get_session, pwd_context, create_access_token, verify_token
+from usefull import summarize_func ,get_session, pwd_context, create_access_token, verify_token
 
 router = APIRouter()
 
@@ -133,17 +133,19 @@ def get_reports(
     token = _extract_bearer_token(authorization)
     _ = _get_user_from_token(token, db)  # we don't use the user yet, but we validate it
 
-    deals = get_data(
-        size=data.size,
-        sort_by=data.sort_by,
-        order=data.order,
-        cpv=data.cpv,
-        minvalue=data.minvalue,
-        maxvalue=data.maxvalue,
-        keywords=data.keywords,
-        date=data.date,
-    )
-    
+    try:
+        deals = get_data(
+            size=data.size,
+            sort_by=data.sort_by,
+            order=data.order,
+            cpv=data.cpv,
+            minvalue=data.minvalue,
+            maxvalue=data.maxvalue,
+            keywords=data.keywords,
+            date=data.date,
+        )
+    except Exception as e:
+        return {"Error:  " + f"{e}"}
     
     return {"deals": deals}
 
@@ -179,10 +181,10 @@ def refresh_token(
     return {"jwt": new_jwt}
 
 @router.post("/summarize",status_code= 200)
-def summarize_data(data: ToSum):
-    
-    title_sum = summarize(ToSum.title,"titlu")
-    description_sum = summarize(ToSum.description, "descriere")
-    
+def summarize(data: ToSum):
+    print("title before: "+ data.title)
+    title_sum = summarize_func(data.title,"titlu")
+    description_sum = summarize_func(data.description, "descriere")
+    print("title after: "+ data.description)
     
     return {"title": title_sum, "description": description_sum}

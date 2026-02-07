@@ -123,12 +123,12 @@ def verify_token(jwt_token: str) -> Dict[str, Any]:
 # ─────────────────────────────────────────────────────────
 
 
-def summarize(text,type):
+def summarize_func(text,type):
     prop = ""
     if(type == "titlu"):
         prop = "un titlu in max 7 cuvinte"
     elif(type == "descriere"):
-        prop = "o descriere scurta"
+        prop = "o descriere scurta in max 15 cuvinte"
 
     stream = generate(
         model= 'raaec/llama3.1-8b-instruct-summarize',

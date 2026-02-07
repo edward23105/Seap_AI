@@ -41,5 +41,5 @@ class DataSend(BaseModel):
 	deals : List[DataFormat]
 
 class ToSum(BaseModel): # data to summarize
-	title : str
-	description : str
+	title : Optional[str] = None
+	description : Optional[str] = None
