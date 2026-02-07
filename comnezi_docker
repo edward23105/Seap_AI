@@ -1,5 +1,0 @@
-docker:
- docker ps - listeaza toate procesele
- docker stop <id/name> - opreste un container
- docker images - toate imaginile de pe pc
-docker rm <id/name> - sterge un container oprit
