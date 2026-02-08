@@ -98,7 +98,7 @@ export default function ReportsPage() {
 
       // Call API
       const data = await getData(payload);
-      
+     
       // Expecting shape { deals: [...] }
       const deals = Array.isArray(data?.deals.deals) ? data.deals.deals : [];
 

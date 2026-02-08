@@ -109,7 +109,6 @@ export async function authUser(payload) {
 }
 
 export async function getData(payload) {
-  console.log(payload);
   
 
   const token = cookies.get("jwt");
@@ -148,6 +147,5 @@ export async function getData(payload) {
     // some other error
     throw new Error(`get_reports failed: ${response.status}`);
   }
-  
   return await response.json();
 }

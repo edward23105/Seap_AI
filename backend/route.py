@@ -182,9 +182,9 @@ def refresh_token(
 
 @router.post("/summarize",status_code= 200)
 def summarize(data: ToSum):
-    print("title before: "+ data.title)
+
     title_sum = summarize_func(data.title,"titlu")
     description_sum = summarize_func(data.description, "descriere")
-    print("title after: "+ data.description)
+   
     
-    return {"title": title_sum, "description": description_sum}
+    return {"title": title_sum, "description": description_sum,}

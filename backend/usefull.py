@@ -126,16 +126,22 @@ def verify_token(jwt_token: str) -> Dict[str, Any]:
 def summarize_func(text,type):
     prop = ""
     if(type == "titlu"):
-        prop = "un titlu in max 7 cuvinte"
+        prop = "un titlu in MAXIM 7 cuvinte"
     elif(type == "descriere"):
-        prop = "o descriere scurta in max 15 cuvinte"
+        prop = "o descriere in MAXIM 15 cuvinte"
+
+    summarized_data = "" 
+    if(text == None):
+        summarized_data = " No Data "
+        return summarized_data
+
 
     stream = generate(
         model= 'raaec/llama3.1-8b-instruct-summarize',
-        prompt= f"Fa din textul urmator {prop} :\n\n{text}\n\nSummary:",
+        prompt= f"Fa din textul urmator {prop} TEXT:\n\n{text}\n\n",
         stream= True,
         )
-    summarized_data = ""
+    
     for chunk in stream:
         part = chunk.get("response","")
         summarized_data = summarized_data + part
